@@ -275,7 +275,7 @@
                                     <div class="form-group clearfix">
                                         <label for="password" class=" col-md-3">رمز عبور</label>
                                         <div class=" col-md-9">
-                                            <input id="password" type="password" value="" name="password" class="form-control" placeholder="رمز ورود" />
+                                            <input id="password" type="password" value="" name="password" class="form-control" placeholder="رمز عبور" />
                                         </div>
                                     </div>
 

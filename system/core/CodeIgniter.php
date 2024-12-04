@@ -171,7 +171,7 @@ if ( ! is_php('5.4'))
 		{
 			file_exists(APPPATH.'vendor/autoload.php')
 				? require_once(APPPATH.'vendor/autoload.php')
-				: log_message('error', '$config[\'composer_autoload\'] is set to TRUE but '.APPPATH.'vendor/autoload.php was not found.');
+				: log_message('error', '$config[\'composer_autoload\'] روی TRUE تنظیم شده است اما '.APPPATH.'vendor/autoload.php پیدا نشد.');
 		}
 		elseif (file_exists($composer_autoload))
 		{
@@ -179,7 +179,7 @@ if ( ! is_php('5.4'))
 		}
 		else
 		{
-			log_message('error', 'Could not find the specified $config[\'composer_autoload\'] path: '.$composer_autoload);
+			log_message('error', 'مسیر مشخص شده برای $config[\'composer_autoload\'] یافت نشد: '.$composer_autoload);
 		}
 	}
 

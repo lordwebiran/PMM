@@ -372,7 +372,7 @@ abstract class CI_DB_driver {
 			}
 		}
 
-		log_message('info', 'Database Driver Class Initialized');
+		log_message('info', 'کلاس درایور پایگاه داده اولیه شد');
 	}
 
 	// --------------------------------------------------------------------
@@ -429,7 +429,7 @@ abstract class CI_DB_driver {
 			// We still don't have a connection?
 			if ( ! $this->conn_id)
 			{
-				log_message('error', 'Unable to connect to the database');
+				log_message('error', 'امکان اتصال به پایگاه داده وجود ندارد');
 
 				if ($this->db_debug)
 				{
@@ -526,7 +526,7 @@ abstract class CI_DB_driver {
 	{
 		if (method_exists($this, '_db_set_charset') && ! $this->_db_set_charset($charset))
 		{
-			log_message('error', 'Unable to set database connection charset: '.$charset);
+			log_message('error', 'تنظیم مجموعه نویسه اتصال پایگاه داده ممکن نیست:'.$charset);
 
 			if ($this->db_debug)
 			{
@@ -609,7 +609,7 @@ abstract class CI_DB_driver {
 	{
 		if ($sql === '')
 		{
-			log_message('error', 'Invalid query: '.$sql);
+			log_message('error', 'پرس و جو نامعتبر: '.$sql);
 			return ($this->db_debug) ? $this->display_error('db_invalid_query') : FALSE;
 		}
 		elseif ( ! is_bool($return_object))
@@ -668,7 +668,7 @@ abstract class CI_DB_driver {
 			$error = $this->error();
 
 			// Log errors
-			log_message('error', 'Query error: '.$error['message'].' - Invalid query: '.$sql);
+			log_message('error', 'خطای پرس و جو: '.$error['message'].' - پرس و جو نامعتبر: '.$sql);
 
 			if ($this->db_debug)
 			{
@@ -682,7 +682,7 @@ abstract class CI_DB_driver {
 					$this->trans_complete();
 					if ($trans_depth === $this->_trans_depth)
 					{
-						log_message('error', 'Database: Failure during an automated transaction commit/rollback!');
+						log_message('error', 'پایگاه داده: شکست در طول یک تراکنش خودکار تعهد/بازگشت!');
 						break;
 					}
 				}
@@ -869,7 +869,7 @@ abstract class CI_DB_driver {
 				$this->_trans_status = TRUE;
 			}
 
-			log_message('debug', 'DB Transaction Failure');
+			log_message('debug', 'تراکنش DB شکست خورد');
 			return FALSE;
 		}
 

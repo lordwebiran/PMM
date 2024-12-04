@@ -32,65 +32,16 @@
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
  * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
- * @since	Version 1.0.0
+ * @since	Version 3.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Application Controller Class
- *
- * This class object is the super class that every library in
- * CodeIgniter will be assigned to.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/general/controllers.html
- */
-class CI_Controller {
-
-	/**
-	 * Reference to the CI singleton
-	 *
-	 * @var	object
-	 */
-	private static $instance;
-
-	/**
-	 * Class constructor
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		self::$instance =& $this;
-
-		// Assign all the class objects that were instantiated by the
-		// bootstrap file (CodeIgniter.php) to local class variables
-		// so that CI can run as one big super object.
-		foreach (is_loaded() as $var => $class)
-		{
-			$this->$var =& load_class($class);
-		}
-
-		$this->load =& load_class('Loader', 'core');
-		$this->load->initialize();
-		log_message('info', 'کلاس کنترلر راه‌اندازی شد');
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Get the CI singleton
-	 *
-	 * @static
-	 * @return	object
-	 */
-	public static function &get_instance()
-	{
-		return self::$instance;
-	}
-
-}
+$lang['migration_none_found'] = 'هیچ مهاجرتی پیدا نشد.';
+$lang['migration_not_found'] = 'هیچ مهاجرتی با شماره نسخه: %s پیدا نشد.';
+$lang['migration_sequence_gap'] = 'یک فاصله در دنباله مهاجرت‌ها در نزدیکی شماره نسخه: %s وجود دارد.';
+$lang['migration_multiple_version'] = 'مهاجرت‌های متعددی با همان شماره نسخه: %s وجود دارد.';
+$lang['migration_class_doesnt_exist'] = 'کلاس مهاجرت "%s" پیدا نشد.';
+$lang['migration_missing_up_method'] = 'کلاس مهاجرت "%s" فاقد متد "up" است.';
+$lang['migration_missing_down_method'] = 'کلاس مهاجرت "%s" فاقد متد "down" است.';
+$lang['migration_invalid_filename'] = 'مهاجرت "%s" یک نام فایل نامعتبر دارد.';

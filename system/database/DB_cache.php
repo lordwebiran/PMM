@@ -108,7 +108,7 @@ class CI_DB_Cache {
 
 		if ( ! is_dir($path))
 		{
-			log_message('debug', 'DB cache path error: '.$path);
+			log_message('debug', 'خطای مسیر حافظه پنهان DB:'.$path);
 
 			// If the path is wrong we'll turn off caching
 			return $this->db->cache_off();
@@ -116,7 +116,7 @@ class CI_DB_Cache {
 
 		if ( ! is_really_writable($path))
 		{
-			log_message('debug', 'DB cache dir not writable: '.$path);
+			log_message('debug', 'DB cache dir قابل نوشتن نیست: '.$path);
 
 			// If the path is not really writable we'll turn off caching
 			return $this->db->cache_off();

@@ -37,60 +37,23 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Application Controller Class
- *
- * This class object is the super class that every library in
- * CodeIgniter will be assigned to.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/general/controllers.html
- */
-class CI_Controller {
+$lang['ut_test_name'] = 'نام تست';
+$lang['ut_test_datatype'] = 'نوع داده تست';
+$lang['ut_res_datatype'] = 'نوع داده مورد انتظار';
+$lang['ut_result'] = 'نتیجه';
+$lang['ut_undefined'] = 'نام تست تعریف‌نشده';
+$lang['ut_file'] = 'نام فایل';
+$lang['ut_line'] = 'شماره خط';
+$lang['ut_passed'] = 'قبول شده';
+$lang['ut_failed'] = 'ناموفق';
+$lang['ut_boolean'] = 'بولی';
+$lang['ut_integer'] = 'عدد صحیح';
+$lang['ut_float'] = 'عدد اعشاری';
+$lang['ut_double'] = 'عدد اعشاری'; // می‌تواند مشابه با float باشد
+$lang['ut_string'] = 'رشته';
+$lang['ut_array'] = 'آرایه';
+$lang['ut_object'] = 'شیء';
+$lang['ut_resource'] = 'منبع';
+$lang['ut_null'] = 'تهی';
+$lang['ut_notes'] = 'یادداشت‌ها';
 
-	/**
-	 * Reference to the CI singleton
-	 *
-	 * @var	object
-	 */
-	private static $instance;
-
-	/**
-	 * Class constructor
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		self::$instance =& $this;
-
-		// Assign all the class objects that were instantiated by the
-		// bootstrap file (CodeIgniter.php) to local class variables
-		// so that CI can run as one big super object.
-		foreach (is_loaded() as $var => $class)
-		{
-			$this->$var =& load_class($class);
-		}
-
-		$this->load =& load_class('Loader', 'core');
-		$this->load->initialize();
-		log_message('info', 'کلاس کنترلر راه‌اندازی شد');
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Get the CI singleton
-	 *
-	 * @static
-	 * @return	object
-	 */
-	public static function &get_instance()
-	{
-		return self::$instance;
-	}
-
-}

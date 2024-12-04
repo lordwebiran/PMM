@@ -37,60 +37,48 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Application Controller Class
- *
- * This class object is the super class that every library in
- * CodeIgniter will be assigned to.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/general/controllers.html
- */
-class CI_Controller {
-
-	/**
-	 * Reference to the CI singleton
-	 *
-	 * @var	object
-	 */
-	private static $instance;
-
-	/**
-	 * Class constructor
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		self::$instance =& $this;
-
-		// Assign all the class objects that were instantiated by the
-		// bootstrap file (CodeIgniter.php) to local class variables
-		// so that CI can run as one big super object.
-		foreach (is_loaded() as $var => $class)
-		{
-			$this->$var =& load_class($class);
-		}
-
-		$this->load =& load_class('Loader', 'core');
-		$this->load->initialize();
-		log_message('info', 'کلاس کنترلر راه‌اندازی شد');
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Get the CI singleton
-	 *
-	 * @static
-	 * @return	object
-	 */
-	public static function &get_instance()
-	{
-		return self::$instance;
-	}
-
-}
+$lang['cal_su'] = 'ی';
+$lang['cal_mo'] = 'د';
+$lang['cal_tu'] = 'س';
+$lang['cal_we'] = 'چ';
+$lang['cal_th'] = 'پ';
+$lang['cal_fr'] = 'ج';
+$lang['cal_sa'] = 'ش';
+$lang['cal_sun'] = 'یک';
+$lang['cal_mon'] = 'دو';
+$lang['cal_tue'] = 'سه';
+$lang['cal_wed'] = 'چه';
+$lang['cal_thu'] = 'پن';
+$lang['cal_fri'] = 'جم';
+$lang['cal_sat'] = 'شن';
+$lang['cal_sunday'] = 'یکشنبه';
+$lang['cal_monday'] = 'دوشنبه';
+$lang['cal_tuesday'] = 'سه‌شنبه';
+$lang['cal_wednesday'] = 'چهارشنبه';
+$lang['cal_thursday'] = 'پنج‌شنبه';
+$lang['cal_friday'] = 'جمعه';
+$lang['cal_saturday'] = 'شنبه';
+$lang['cal_jan'] = 'ژان';
+$lang['cal_feb'] = 'فور';
+$lang['cal_mar'] = 'مار';
+$lang['cal_apr'] = 'آور';
+$lang['cal_may'] = 'مه';
+$lang['cal_jun'] = 'ژوئن';
+$lang['cal_jul'] = 'ژوئیه';
+$lang['cal_aug'] = 'اوت';
+$lang['cal_sep'] = 'سپت';
+$lang['cal_oct'] = 'اکت';
+$lang['cal_nov'] = 'نوام';
+$lang['cal_dec'] = 'دسام';
+$lang['cal_january'] = 'ژانویه';
+$lang['cal_february'] = 'فوریه';
+$lang['cal_march'] = 'مارس';
+$lang['cal_april'] = 'آوریل';
+$lang['cal_mayl'] = 'مه';
+$lang['cal_june'] = 'ژوئن';
+$lang['cal_july'] = 'ژوئیه';
+$lang['cal_august'] = 'اوت';
+$lang['cal_september'] = 'سپتامبر';
+$lang['cal_october'] = 'اکتبر';
+$lang['cal_november'] = 'نوامبر';
+$lang['cal_december'] = 'دسامبر';

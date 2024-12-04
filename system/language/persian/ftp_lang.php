@@ -37,60 +37,16 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Application Controller Class
- *
- * This class object is the super class that every library in
- * CodeIgniter will be assigned to.
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/general/controllers.html
- */
-class CI_Controller {
+$lang['ftp_no_connection'] = 'قادر به یافتن شناسه اتصال معتبر نیست. لطفاً مطمئن شوید که قبل از انجام هرگونه عملیات فایل به سرور متصل شده‌اید.';
+$lang['ftp_unable_to_connect'] = 'قادر به اتصال به سرور FTP با استفاده از نام میزبان ارائه شده نیست.';
+$lang['ftp_unable_to_login'] = 'قادر به ورود به سرور FTP نیستید. لطفاً نام کاربری و رمز عبور خود را بررسی کنید.';
+$lang['ftp_unable_to_mkdir'] = 'قادر به ایجاد دایرکتوری مشخص شده نیست.';
+$lang['ftp_unable_to_changedir'] = 'قادر به تغییر دایرکتوری‌ها نیست.';
+$lang['ftp_unable_to_chmod'] = 'قادر به تنظیم مجوزهای فایل نیستید. لطفاً مسیر خود را بررسی کنید.';
+$lang['ftp_unable_to_upload'] = 'قادر به بارگذاری فایل مشخص شده نیستید. لطفاً مسیر خود را بررسی کنید.';
+$lang['ftp_unable_to_download'] = 'قادر به دانلود فایل مشخص شده نیستید. لطفاً مسیر خود را بررسی کنید.';
+$lang['ftp_no_source_file'] = 'قادر به یافتن فایل منبع نیستید. لطفاً مسیر خود را بررسی کنید.';
+$lang['ftp_unable_to_rename'] = 'قادر به تغییر نام فایل نیستید.';
+$lang['ftp_unable_to_delete'] = 'قادر به حذف فایل نیستید.';
+$lang['ftp_unable_to_move'] = 'قادر به جابجایی فایل نیستید. لطفاً مطمئن شوید که دایرکتوری مقصد وجود دارد.';
 
-	/**
-	 * Reference to the CI singleton
-	 *
-	 * @var	object
-	 */
-	private static $instance;
-
-	/**
-	 * Class constructor
-	 *
-	 * @return	void
-	 */
-	public function __construct()
-	{
-		self::$instance =& $this;
-
-		// Assign all the class objects that were instantiated by the
-		// bootstrap file (CodeIgniter.php) to local class variables
-		// so that CI can run as one big super object.
-		foreach (is_loaded() as $var => $class)
-		{
-			$this->$var =& load_class($class);
-		}
-
-		$this->load =& load_class('Loader', 'core');
-		$this->load->initialize();
-		log_message('info', 'کلاس کنترلر راه‌اندازی شد');
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Get the CI singleton
-	 *
-	 * @static
-	 * @return	object
-	 */
-	public static function &get_instance()
-	{
-		return self::$instance;
-	}
-
-}
